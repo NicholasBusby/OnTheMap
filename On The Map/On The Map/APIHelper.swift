@@ -28,7 +28,7 @@ class APIHelper {
         static let UserData = "api/users/{id}"
     }
     
-    static func buildTask(request: NSMutableURLRequest, completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask{
+    static func buildTask(request: NSMutableURLRequest, completionHandler: (result: NSData!, error: NSError?) -> Void) -> NSURLSessionDataTask{
         let task = session.dataTaskWithRequest(request) {data, response, downloadError in
             
             if let error = downloadError {

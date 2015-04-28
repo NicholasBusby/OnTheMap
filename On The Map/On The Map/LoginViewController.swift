@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -20,17 +21,33 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonClicked(sender: AnyObject) {
-        var loginSucceded = true
-        
-        if !loginSucceded{
-            let alert = UIAlertView()
-            alert.title = "Oops"
-            alert.message = "There was an issue logging in"
-            alert.addButtonWithTitle("OK")
-            alert.show()
-        } else {
+        loginButton.enabled = false
+        Login().attemptToLogIn(email.text, password: password.text){ (success, error) in
+            if success{
+                self.logInSuccessful()
+            } else {
+                self.displayError(error)
+            }
+        }
+    }
+    
+    func logInSuccessful() {
+        dispatch_async(dispatch_get_main_queue(), {
             let controller = self.storyboard!.instantiateViewControllerWithIdentifier("MainAppNavigationController") as! UINavigationController
             self.presentViewController(controller, animated: true, completion: nil)
-        }
+        })
+    }
+    
+    func displayError(error: String?) {
+        let alert = UIAlertView()
+        alert.title = "Oops"
+        alert.message = error
+        alert.addButtonWithTitle("OK")
+        dispatch_async(dispatch_get_main_queue(), {
+            if let errorString = error {
+                alert.show()
+            }
+        })
+        loginButton.enabled = true
     }
 }
