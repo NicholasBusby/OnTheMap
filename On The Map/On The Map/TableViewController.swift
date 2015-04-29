@@ -7,7 +7,37 @@
 //
 
 import Foundation
+import UIKit
 
-class TableViewController: TabViewController {
+class TableViewController: TabViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.delegate = self
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pins.count
+    }
+    
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("pinCell") as! UITableViewCell
+        
+        let pin = self.pins[indexPath.row]
+        cell.textLabel?.text = pin.firstName + " " + pin.lastName
+        cell.detailTextLabel?.text = pin.mediaURL
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        goToURL(pins[indexPath.row].mediaURL)
+    }
 }

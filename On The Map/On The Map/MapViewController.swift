@@ -22,17 +22,34 @@ class MapViewController: TabViewController, MKMapViewDelegate {
         
         for pin in pins{
             var location = CLLocationCoordinate2DMake(pin.latitude, pin.longitude)
-            // Drop a pin
+            // Drop a pindrop
             var dropPin = MKPointAnnotation()
             dropPin.coordinate = location
             dropPin.title = pin.mapString
-            dropPin.subtitle = pin.mediaURL?.absoluteString
+            dropPin.subtitle = pin.mediaURL
             map.addAnnotation(dropPin)
         }
     }
-
     
-    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
-        view.annotation.
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if annotation is MKPointAnnotation {
+            let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
+            
+            pinAnnotationView.draggable = true
+            pinAnnotationView.canShowCallout = true
+            
+            let infoButton = UIButton.buttonWithType(UIButtonType.InfoLight) as! UIButton
+            infoButton.setImage(UIImage(named: "info"), forState: .Normal)
+            
+            pinAnnotationView.leftCalloutAccessoryView = infoButton
+            return pinAnnotationView
+        }
+        
+        return nil
     }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        goToURL(view.annotation.subtitle!)
+    }
+
 }

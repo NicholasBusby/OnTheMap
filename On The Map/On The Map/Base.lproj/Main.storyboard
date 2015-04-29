@@ -253,13 +253,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="d22-Fn-1i6">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pinCell" textLabel="sVc-3N-9dK" detailTextLabel="O6v-eW-EYT" style="IBUITableViewCellStyleSubtitle" id="d22-Fn-1i6">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d22-Fn-1i6" id="Y8e-RS-nnz">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sVc-3N-9dK">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O6v-eW-EYT">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M3e-7v-faz" id="eoT-Y8-TPe"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,10 +297,10 @@
                                 <exclude reference="wE7-up-JzL"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WGk-C7-toM"/>
                                 <exclude reference="0t5-BJ-QEy"/>
                                 <exclude reference="Bhs-vB-0fK"/>
                                 <exclude reference="w0a-hx-hYu"/>
-                                <exclude reference="WGk-C7-toM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -285,14 +308,17 @@
                                 <include reference="wE7-up-JzL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WGk-C7-toM"/>
                                 <include reference="0t5-BJ-QEy"/>
                                 <include reference="Bhs-vB-0fK"/>
                                 <include reference="w0a-hx-hYu"/>
-                                <include reference="WGk-C7-toM"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" id="h8a-Jj-CAe"/>
+                    <connections>
+                        <outlet property="tableView" destination="wE7-up-JzL" id="Wnc-qF-Hm5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bea-h9-Qjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -326,10 +352,10 @@
                                 <exclude reference="xSo-mV-RAh"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0UD-Jx-Spe"/>
                                 <exclude reference="NnE-SD-Yd7"/>
                                 <exclude reference="dEe-W7-4Yv"/>
                                 <exclude reference="eAb-zD-7K7"/>
-                                <exclude reference="0UD-Jx-Spe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -337,10 +363,10 @@
                                 <include reference="xSo-mV-RAh"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="0UD-Jx-Spe"/>
                                 <include reference="NnE-SD-Yd7"/>
                                 <include reference="dEe-W7-4Yv"/>
                                 <include reference="eAb-zD-7K7"/>
-                                <include reference="0UD-Jx-Spe"/>
                             </mask>
                         </variation>
                     </view>

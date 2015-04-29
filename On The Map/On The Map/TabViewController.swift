@@ -18,18 +18,18 @@ class TabViewController: UIViewController {
     }
     
     func getPins() {
-        for i in 0..<3 {
-            var test = [String: AnyObject]()
-            test["firstName"] = "hello"
-            test["lastName"] = "world"
-            test["latitude"] = 35.174 + (Double(i) * 10.0)
-            test["longitude"] = -79.3922 + (Double(i) * 10.0)
-            test["mapString"] = "North Carolina"
-            test["mediaURL"] = "http://www.facebook.com"
-            test["objectID"] = "j3jek3j3"
-            test["uniqueKey"] = "3838384"
-            var pin = Pin(dictionary: test)
-            pins.append(pin)
+        var pinAPI = PinsAPI()
+        pinAPI.GETPins(){ (pins, success, error) in
+            if success{
+                self.pins = pins!
+            } else {
+                println(error)
+            }
         }
+    }
+    
+    func goToURL(url: String) {
+        var link = NSURL(string: url)
+        UIApplication.sharedApplication().openURL(link!)
     }
 }

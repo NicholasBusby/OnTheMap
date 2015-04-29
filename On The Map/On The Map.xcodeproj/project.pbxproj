@@ -21,6 +21,8 @@
 		54D94A661AE970DE00E35205 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D94A641AE970DE00E35205 /* LaunchScreen.xib */; };
 		54D94A721AE970DE00E35205 /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D94A711AE970DE00E35205 /* On_The_MapTests.swift */; };
 		54D94A7F1AE972C900E35205 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D94A7E1AE972C900E35205 /* APIHelper.swift */; };
+		54EFB1F31AF15FC4006B387C /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EFB1F21AF15FC4006B387C /* PinAnnotation.swift */; };
+		54EFB1F51AF18013006B387C /* PinsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EFB1F41AF18013006B387C /* PinsAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		54D94A701AE970DE00E35205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D94A711AE970DE00E35205 /* On_The_MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapTests.swift; sourceTree = "<group>"; };
 		54D94A7E1AE972C900E35205 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		54EFB1F21AF15FC4006B387C /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		54EFB1F41AF18013006B387C /* PinsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 				54C7F8421AEEAC7D00BB60E8 /* MapViewController.swift */,
 				54C7F8441AEEAC8A00BB60E8 /* TableViewController.swift */,
 				54C7F8461AEEACDE00BB60E8 /* TabViewController.swift */,
+				54EFB1F21AF15FC4006B387C /* PinAnnotation.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				54D94A7E1AE972C900E35205 /* APIHelper.swift */,
 				543CF5701AE9AE3100D06EE5 /* Login.swift */,
+				54EFB1F41AF18013006B387C /* PinsAPI.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -271,8 +277,10 @@
 			files = (
 				54C7F8471AEEACDE00BB60E8 /* TabViewController.swift in Sources */,
 				543CF56C1AE98DB400D06EE5 /* LoginViewController.swift in Sources */,
+				54EFB1F31AF15FC4006B387C /* PinAnnotation.swift in Sources */,
 				54C7F8451AEEAC8A00BB60E8 /* TableViewController.swift in Sources */,
 				54D94A7F1AE972C900E35205 /* APIHelper.swift in Sources */,
+				54EFB1F51AF18013006B387C /* PinsAPI.swift in Sources */,
 				54D94A5C1AE970DE00E35205 /* AppDelegate.swift in Sources */,
 				54C7F8431AEEAC7D00BB60E8 /* MapViewController.swift in Sources */,
 				54C7F8491AEEB96B00BB60E8 /* Pin.swift in Sources */,

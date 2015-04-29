@@ -14,7 +14,7 @@ struct Pin {
     var latitude = 0.0
     var longitude = 0.0
     var mapString = ""
-    var mediaURL = NSURL(string: "Google.com")
+    var mediaURL = "Google.com"
     var objectID = ""
     var uniqueKey = ""
     
@@ -35,7 +35,7 @@ struct Pin {
             mapString = location
         }
         if let url = dictionary["mediaURL"] as? String {
-            mediaURL = NSURL(string: url)
+            mediaURL = url
         }
         if let id = dictionary["objectID"] as? String {
             objectID = id
