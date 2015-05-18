@@ -52,6 +52,7 @@ class MapViewController: TabViewController, MKMapViewDelegate {
             dropPin.subtitle = pin.mediaURL
             map.addAnnotation(dropPin)
         }
+        println("done getting pins")
     }
 
 }

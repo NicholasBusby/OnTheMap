@@ -30,11 +30,22 @@ class TabViewController: UIViewController {
     }
     
     func goToURL(url: String) {
-        var link = NSURL(string: url)
-        UIApplication.sharedApplication().openURL(link!)
+        if let link = NSURL(string: url){
+            if UIApplication.sharedApplication().canOpenURL(link){
+                UIApplication.sharedApplication().openURL(link)
+                return
+            }
+        }
+        showBadURLMessage()
     }
     
-    func usePins(){
-        
+    func showBadURLMessage(){
+        let alert = UIAlertView()
+        alert.title = "Bad URL"
+        alert.message = "This person entered an invalid Email"
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
+    
+    func usePins(){}
 }
