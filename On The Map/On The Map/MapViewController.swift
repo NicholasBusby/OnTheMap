@@ -19,16 +19,6 @@ class MapViewController: TabViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         map.delegate = self
-        
-        for pin in pins{
-            var location = CLLocationCoordinate2DMake(pin.latitude, pin.longitude)
-            // Drop a pindrop
-            var dropPin = MKPointAnnotation()
-            dropPin.coordinate = location
-            dropPin.title = pin.mapString
-            dropPin.subtitle = pin.mediaURL
-            map.addAnnotation(dropPin)
-        }
     }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
@@ -50,6 +40,18 @@ class MapViewController: TabViewController, MKMapViewDelegate {
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         goToURL(view.annotation.subtitle!)
+    }
+    
+    override func usePins(){
+        for pin in pins{
+            var location = CLLocationCoordinate2DMake(pin.latitude, pin.longitude)
+            // Drop a pindrop
+            var dropPin = MKPointAnnotation()
+            dropPin.coordinate = location
+            dropPin.title = pin.mapString
+            dropPin.subtitle = pin.mediaURL
+            map.addAnnotation(dropPin)
+        }
     }
 
 }

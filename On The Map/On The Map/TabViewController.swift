@@ -22,6 +22,7 @@ class TabViewController: UIViewController {
         pinAPI.GETPins(){ (pins, success, error) in
             if success{
                 self.pins = pins!
+                self.usePins()
             } else {
                 println(error)
             }
@@ -31,5 +32,9 @@ class TabViewController: UIViewController {
     func goToURL(url: String) {
         var link = NSURL(string: url)
         UIApplication.sharedApplication().openURL(link!)
+    }
+    
+    func usePins(){
+        
     }
 }

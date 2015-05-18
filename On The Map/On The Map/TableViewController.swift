@@ -37,7 +37,13 @@ class TableViewController: TabViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         goToURL(pins[indexPath.row].mediaURL)
+    }
+    
+    override func usePins() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
     }
 }
