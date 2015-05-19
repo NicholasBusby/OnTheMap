@@ -10,35 +10,38 @@ import Foundation
 import UIKit
 
 class TabViewController: UIViewController {
-    var pins = [Pin]()
+    var studentInformations = [StudentInformation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPins()
+        getInfo()
     }
     
-    func getPins() {
-        var pinAPI = PinsAPI()
-        pinAPI.GETPins(){ (pins, success, error) in
+    func getInfo() {
+        var infoAPI = StudentInformationAPI()
+        infoAPI.GETStudentInformations(){ (info, success, error) in
             if success{
-                self.pins = pins!
-                self.usePins()
+                self.studentInformations = info!
+                self.useInfo()
             } else {
                 println(error)
+                let alert = UIAlertView()
+                alert.title = "Alert"
+                alert.message = "Could not retrieve Student Information"
+                alert.addButtonWithTitle("OK")
+                alert.show()
             }
         }
     }
     
     func goToURL(url: String) {
         if let link = NSURL(string: url){
-            if UIApplication.sharedApplication().canOpenURL(link){
-                UIApplication.sharedApplication().openURL(link)
-                return
-            }
+            UIApplication.sharedApplication().openURL(link)
+            return
         }
         showBadURLMessage()
     }
-    
+
     func showBadURLMessage(){
         let alert = UIAlertView()
         alert.title = "Bad URL"
@@ -47,5 +50,5 @@ class TabViewController: UIViewController {
         alert.show()
     }
     
-    func usePins(){}
+    func useInfo(){}
 }

@@ -19,7 +19,7 @@ class TableViewController: TabViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pins.count
+        return studentInformations.count
     }
     
     
@@ -30,7 +30,7 @@ class TableViewController: TabViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pinCell") as! UITableViewCell
         
-        let pin = self.pins[indexPath.row]
+        let pin = self.studentInformations[indexPath.row]
         cell.textLabel?.text = pin.firstName + " " + pin.lastName
         cell.detailTextLabel?.text = pin.mediaURL
         
@@ -38,10 +38,10 @@ class TableViewController: TabViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        goToURL(pins[indexPath.row].mediaURL)
+        goToURL(studentInformations[indexPath.row].mediaURL)
     }
     
-    override func usePins() {
+    override func useInfo() {
         dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()
         })

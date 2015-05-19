@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		543CF56C1AE98DB400D06EE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543CF56B1AE98DB400D06EE5 /* LoginViewController.swift */; };
 		543CF5711AE9AE3100D06EE5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543CF5701AE9AE3100D06EE5 /* Login.swift */; };
+		54900BEC1B0A590300E1DDAA /* NewInfoLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54900BEB1B0A590300E1DDAA /* NewInfoLocationViewController.swift */; };
+		54900BEE1B0A739B00E1DDAA /* NewInfoLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54900BED1B0A739B00E1DDAA /* NewInfoLinkViewController.swift */; };
 		54C7F83F1AEAC27200BB60E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7F83E1AEAC27200BB60E8 /* User.swift */; };
 		54C7F8411AEAD9FA00BB60E8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C7F8401AEAD9FA00BB60E8 /* MapKit.framework */; };
 		54C7F8431AEEAC7D00BB60E8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7F8421AEEAC7D00BB60E8 /* MapViewController.swift */; };
 		54C7F8451AEEAC8A00BB60E8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7F8441AEEAC8A00BB60E8 /* TableViewController.swift */; };
 		54C7F8471AEEACDE00BB60E8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7F8461AEEACDE00BB60E8 /* TabViewController.swift */; };
-		54C7F8491AEEB96B00BB60E8 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7F8481AEEB96B00BB60E8 /* Pin.swift */; };
+		54C7F8491AEEB96B00BB60E8 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7F8481AEEB96B00BB60E8 /* StudentInformation.swift */; };
 		54D94A5C1AE970DE00E35205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D94A5B1AE970DE00E35205 /* AppDelegate.swift */; };
 		54D94A611AE970DE00E35205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D94A5F1AE970DE00E35205 /* Main.storyboard */; };
 		54D94A631AE970DE00E35205 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D94A621AE970DE00E35205 /* Images.xcassets */; };
@@ -22,7 +24,7 @@
 		54D94A721AE970DE00E35205 /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D94A711AE970DE00E35205 /* On_The_MapTests.swift */; };
 		54D94A7F1AE972C900E35205 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D94A7E1AE972C900E35205 /* APIHelper.swift */; };
 		54EFB1F31AF15FC4006B387C /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EFB1F21AF15FC4006B387C /* PinAnnotation.swift */; };
-		54EFB1F51AF18013006B387C /* PinsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EFB1F41AF18013006B387C /* PinsAPI.swift */; };
+		54EFB1F51AF18013006B387C /* StudentInformationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EFB1F41AF18013006B387C /* StudentInformationAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +40,14 @@
 /* Begin PBXFileReference section */
 		543CF56B1AE98DB400D06EE5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		543CF5701AE9AE3100D06EE5 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		54900BEB1B0A590300E1DDAA /* NewInfoLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInfoLocationViewController.swift; sourceTree = "<group>"; };
+		54900BED1B0A739B00E1DDAA /* NewInfoLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInfoLinkViewController.swift; sourceTree = "<group>"; };
 		54C7F83E1AEAC27200BB60E8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54C7F8401AEAD9FA00BB60E8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		54C7F8421AEEAC7D00BB60E8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		54C7F8441AEEAC8A00BB60E8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		54C7F8461AEEACDE00BB60E8 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		54C7F8481AEEB96B00BB60E8 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		54C7F8481AEEB96B00BB60E8 /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		54D94A561AE970DE00E35205 /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D94A5A1AE970DE00E35205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D94A5B1AE970DE00E35205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		54D94A711AE970DE00E35205 /* On_The_MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapTests.swift; sourceTree = "<group>"; };
 		54D94A7E1AE972C900E35205 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		54EFB1F21AF15FC4006B387C /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
-		54EFB1F41AF18013006B387C /* PinsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsAPI.swift; sourceTree = "<group>"; };
+		54EFB1F41AF18013006B387C /* StudentInformationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformationAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				54C7F83E1AEAC27200BB60E8 /* User.swift */,
-				54C7F8481AEEB96B00BB60E8 /* Pin.swift */,
+				54C7F8481AEEB96B00BB60E8 /* StudentInformation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -161,6 +165,8 @@
 				54C7F8441AEEAC8A00BB60E8 /* TableViewController.swift */,
 				54C7F8461AEEACDE00BB60E8 /* TabViewController.swift */,
 				54EFB1F21AF15FC4006B387C /* PinAnnotation.swift */,
+				54900BEB1B0A590300E1DDAA /* NewInfoLocationViewController.swift */,
+				54900BED1B0A739B00E1DDAA /* NewInfoLinkViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -170,7 +176,7 @@
 			children = (
 				54D94A7E1AE972C900E35205 /* APIHelper.swift */,
 				543CF5701AE9AE3100D06EE5 /* Login.swift */,
-				54EFB1F41AF18013006B387C /* PinsAPI.swift */,
+				54EFB1F41AF18013006B387C /* StudentInformationAPI.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -275,15 +281,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54900BEC1B0A590300E1DDAA /* NewInfoLocationViewController.swift in Sources */,
 				54C7F8471AEEACDE00BB60E8 /* TabViewController.swift in Sources */,
 				543CF56C1AE98DB400D06EE5 /* LoginViewController.swift in Sources */,
 				54EFB1F31AF15FC4006B387C /* PinAnnotation.swift in Sources */,
 				54C7F8451AEEAC8A00BB60E8 /* TableViewController.swift in Sources */,
 				54D94A7F1AE972C900E35205 /* APIHelper.swift in Sources */,
-				54EFB1F51AF18013006B387C /* PinsAPI.swift in Sources */,
+				54EFB1F51AF18013006B387C /* StudentInformationAPI.swift in Sources */,
+				54900BEE1B0A739B00E1DDAA /* NewInfoLinkViewController.swift in Sources */,
 				54D94A5C1AE970DE00E35205 /* AppDelegate.swift in Sources */,
 				54C7F8431AEEAC7D00BB60E8 /* MapViewController.swift in Sources */,
-				54C7F8491AEEB96B00BB60E8 /* Pin.swift in Sources */,
+				54C7F8491AEEB96B00BB60E8 /* StudentInformation.swift in Sources */,
 				54C7F83F1AEAC27200BB60E8 /* User.swift in Sources */,
 				543CF5711AE9AE3100D06EE5 /* Login.swift in Sources */,
 			);

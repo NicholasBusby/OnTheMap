@@ -1,5 +1,5 @@
 //
-//  Pins.swift
+//  StudentInformation.swift
 //  On The Map
 //
 //  Created by Nicholas Busby on 4/27/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pin {
+struct StudentInformation {
     var firstName = ""
     var lastName = ""
     var latitude = 0.0

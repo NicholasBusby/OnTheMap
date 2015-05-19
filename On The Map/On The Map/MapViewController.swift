@@ -42,15 +42,16 @@ class MapViewController: TabViewController, MKMapViewDelegate {
         goToURL(view.annotation.subtitle!)
     }
     
-    override func usePins(){
-        for pin in pins{
-            var location = CLLocationCoordinate2DMake(pin.latitude, pin.longitude)
+    override func useInfo(){
+        for info in studentInformations{
+            var location = CLLocationCoordinate2DMake(info.latitude, info.longitude)
             // Drop a pindrop
             var dropPin = MKPointAnnotation()
             dropPin.coordinate = location
-            dropPin.title = pin.mapString
-            dropPin.subtitle = pin.mediaURL
+            dropPin.title = info.mapString
+            dropPin.subtitle = info.mediaURL
             map.addAnnotation(dropPin)
+            
         }
         println("done getting pins")
     }
