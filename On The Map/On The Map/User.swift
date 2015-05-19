@@ -11,6 +11,8 @@ import Foundation
 struct User {
     var id = ""
     var key = ""
+    var firstName = ""
+    var lastName = ""
     
     init(dictionary: [String: AnyObject]){
         if let session = dictionary["session"] as? [String: AnyObject] {

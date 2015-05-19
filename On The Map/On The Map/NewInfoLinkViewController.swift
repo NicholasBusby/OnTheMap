@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class NewInfoLinkViewController: UIViewController, UITextFieldDelegate {
+class NewInfoLinkViewController: UIViewController {
     var region: MKCoordinateRegion?
     var mapString: String?
     
@@ -23,26 +23,39 @@ class NewInfoLinkViewController: UIViewController, UITextFieldDelegate {
         if region != nil {
             map.setRegion(region!, animated: true)
         }
-        linkField.delegate = self
     }
     
     @IBAction func shareButtonClicked(sender: AnyObject) {
-        StudentInformationAPI().POSTStudentInformation(buildInfoHash()) { (success, error) in
-            if let e = error {
-                println(e)
-            } else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.performSegueWithIdentifier("donePostingInfo", sender: self)
-                })
+        if let link = NSURL(string: linkField.text) {
+            if UIApplication.sharedApplication().canOpenURL(link){
+                StudentInformationAPI().POSTStudentInformation(buildInfoHash()) { (success, error) in
+                    if let e = error {
+                        println(e)
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.performSegueWithIdentifier("donePostingInfo", sender: self)
+                        })
+                    }
+                }
+                return
             }
         }
+        showBadLink()
+    }
+    
+    func showBadLink(){
+        let alert = UIAlertView()
+        alert.title = "Bad link"
+        alert.message = "Link is not valid.  Did you include 'http://'?"
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
     
     func buildInfoHash() -> [String: AnyObject] {
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate{
             let hash:[String: AnyObject] = [
-                "firstName": "first",
-                "lastName": "last",
+                "firstName": appDelegate.user!.firstName,
+                "lastName": appDelegate.user!.lastName,
                 "latitude": region!.center.latitude,
                 "longitude": region!.center.longitude,
                 "mapString": mapString!,
@@ -53,16 +66,5 @@ class NewInfoLinkViewController: UIViewController, UITextFieldDelegate {
             return hash
         }
         return [:]
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let currentString = textField.text + string
-        println(currentString)
-        if let link = NSURL(string: currentString){
-            self.shareButton.enabled = true
-            return true
-        }
-        self.shareButton.enabled = false
-        return true
     }
 }

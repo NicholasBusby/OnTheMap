@@ -32,6 +32,29 @@ class Login {
         }
     }
     
+    func getUserInfo(userID: String, completionHandler: (success: Bool, error: String?) -> Void) {
+        var headers: [String: String] = [:]
+        var queryString: [String: String] = [:]
+        let api = APIHelper.APIs.UserData.stringByReplacingOccurrencesOfString("{id}", withString: userID, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        var userInfoRequest = APIHelper.getRequest(APIHelper.BaseURLs.Login, api: api, headers: headers, queryString: queryString)
+        var task = APIHelper.buildTask(userInfoRequest) { (data, error) in
+            if let e = error{
+                completionHandler(success: false, error: "There was an issue contacting the server")
+            } else {
+                let subSetData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
+                let response = NSJSONSerialization.JSONObjectWithData(subSetData, options: NSJSONReadingOptions.AllowFragments, error: nil) as? [String : AnyObject]
+                println(response)
+                if let error = response!["error"] as? String {
+                    completionHandler(success: false, error: error)
+                } else {
+                    self.extendUser(response!)
+                    completionHandler(success: true, error: nil)
+                }
+
+            }
+        }
+    }
+    
     func buildLoginBody(email: String, password: String) -> [String: AnyObject] {
         return [
             "udacity": [
@@ -44,6 +67,16 @@ class Login {
     func buildUser(jsonResponse: [String: AnyObject]) {
         let user: User = User(dictionary: jsonResponse)
         saveUser(user)
+    }
+    
+    func extendUser(jsonResponse: [String: AnyObject]) {
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            var user = appDelegate.user
+            let userResponse = jsonResponse["user"] as! [String: AnyObject]
+            user?.firstName = userResponse["first_name"] as! String
+            user?.lastName = userResponse["last_name"] as! String
+            saveUser(user!)
+        }
     }
     
     func saveUser(user: User){

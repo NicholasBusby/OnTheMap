@@ -38,7 +38,8 @@ class TableViewController: TabViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        goToURL(studentInformations[indexPath.row].mediaURL)
+        let url = self.studentInformations[indexPath.row].mediaURL
+        goToURL(url)
     }
     
     override func useInfo() {

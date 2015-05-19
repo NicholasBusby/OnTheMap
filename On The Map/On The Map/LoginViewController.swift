@@ -24,7 +24,16 @@ class LoginViewController: UIViewController {
         loginButton.enabled = false
         Login().attemptToLogIn(email.text, password: password.text){ (success, error) in
             if success{
-                self.logInSuccessful()
+                if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+                    var user = appDelegate.user
+                    Login().getUserInfo(user!.key){ (success, error) in
+                        if success{
+                            self.logInSuccessful()
+                        }
+                    }
+                } else {
+                    self.displayError(error)
+                }
             } else {
                 self.displayError(error)
             }

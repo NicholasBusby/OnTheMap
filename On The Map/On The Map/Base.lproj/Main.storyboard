@@ -315,7 +315,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" id="h8a-Jj-CAe"/>
+                    <tabBarItem key="tabBarItem" title="List" image="listIcon" id="h8a-Jj-CAe"/>
                     <connections>
                         <outlet property="tableView" destination="wE7-up-JzL" id="Wnc-qF-Hm5"/>
                     </connections>
@@ -371,7 +371,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="Gtk-YY-M0Z"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mapIcon" id="Gtk-YY-M0Z"/>
                     <connections>
                         <outlet property="map" destination="xSo-mV-RAh" id="kGU-s0-0i8"/>
                     </connections>
@@ -406,7 +406,7 @@
                                 <segue destination="raL-ld-eLI" kind="show" id="MEL-vu-Za5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="3du-PG-Hzl">
+                        <barButtonItem key="rightBarButtonItem" image="pinIcon" style="plain" id="3du-PG-Hzl">
                             <connections>
                                 <segue destination="Ci0-pE-0ci" kind="show" id="On7-05-zBo"/>
                             </connections>
@@ -701,7 +701,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UR-xn-Ykm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UR-xn-Ykm">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title="Share with the world">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -809,8 +809,11 @@
     </scenes>
     <resources>
         <image name="UdacityLogo" width="200" height="150"/>
+        <image name="listIcon" width="32" height="32"/>
+        <image name="mapIcon" width="32" height="32"/>
+        <image name="pinIcon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0I0-lc-VGB"/>
+        <segue reference="MEL-vu-Za5"/>
     </inferredMetricsTieBreakers>
 </document>

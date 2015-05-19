@@ -25,11 +25,7 @@ class TabViewController: UIViewController {
                 self.useInfo()
             } else {
                 println(error)
-                let alert = UIAlertView()
-                alert.title = "Alert"
-                alert.message = "Could not retrieve Student Information"
-                alert.addButtonWithTitle("OK")
-                alert.show()
+                self.showFailureToDownloadMessage()
             }
         }
     }
@@ -48,6 +44,16 @@ class TabViewController: UIViewController {
         alert.message = "This person entered an invalid Email"
         alert.addButtonWithTitle("OK")
         alert.show()
+    }
+    
+    func showFailureToDownloadMessage(){
+        let alert = UIAlertView()
+        alert.title = "issue getting data"
+        alert.message = "Encountered an error loading data. Please try again later"
+        alert.addButtonWithTitle("OK")
+        dispatch_async(dispatch_get_main_queue(), {
+            alert.show()
+        })
     }
     
     func useInfo(){}
