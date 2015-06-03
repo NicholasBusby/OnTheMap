@@ -61,6 +61,7 @@ class APIHelper {
         request.addValue(JSON, forHTTPHeaderField: "Content-Type")
         
         request.HTTPBody = NSJSONSerialization.dataWithJSONObject(body, options: nil, error: &jsonifyError)
+        request.timeoutInterval = 10;
         
         return request
     }
