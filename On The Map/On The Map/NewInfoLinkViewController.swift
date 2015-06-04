@@ -31,16 +31,29 @@ class NewInfoLinkViewController: UIViewController {
                 StudentInformationAPI().POSTStudentInformation(buildInfoHash()) { (success, error) in
                     if let e = error {
                         println(e)
+                        self.tellUserThereWasAnError("There was an issue reaching the server")
                     } else {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.performSegueWithIdentifier("donePostingInfo", sender: self)
-                        })
+                        if success {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.performSegueWithIdentifier("donePostingInfo", sender: self)
+                            })
+                        } else {
+                            self.tellUserThereWasAnError("There was an issue saving your pin")
+                        }
                     }
                 }
                 return
             }
         }
         showBadLink()
+    }
+    
+    func tellUserThereWasAnError(error: String) {
+        let alert = UIAlertView()
+        alert.title = "Oops"
+        alert.message = error
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
     
     func showBadLink(){
