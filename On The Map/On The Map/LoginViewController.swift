@@ -17,7 +17,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            appDelegate.user = User(dictionary: [:])
+        }
     }
     
     @IBAction func loginButtonClicked(sender: AnyObject) {
