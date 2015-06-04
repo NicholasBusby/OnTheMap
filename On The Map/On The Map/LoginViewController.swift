@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
                     Login().getUserInfo(user!.key){ (success, error) in
                         if success{
                             self.logInSuccessful()
+                        } else {
+                            self.displayError("There was an issue logging you in, please try again later")
                         }
                     }
                 } else {
