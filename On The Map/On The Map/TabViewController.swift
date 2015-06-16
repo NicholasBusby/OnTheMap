@@ -10,15 +10,17 @@ import Foundation
 import UIKit
 
 class TabViewController: UIViewController {
+    //stores the pins
     var studentInformations = [StudentInformation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getInfo()
+        getInfo() //calling to get all pins
     }
     
     func getInfo() {
         var infoAPI = StudentInformationAPI()
+        //pins are getting downloaded here
         infoAPI.GETStudentInformations(){ (info, success, error) in
             if success{
                 self.studentInformations = info!
